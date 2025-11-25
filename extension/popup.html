@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> <style>
+        body {
+            width: 320px;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #0f172a; /* Deep Navy */
+            color: #f8fafc;
+            margin: 0;
+            padding: 16px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 12px;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .status-card {
+            background: #1e293b;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            border: 1px solid #334155;
+            margin-bottom: 16px;
+        }
+
+        #status-icon { font-size: 40px; margin-bottom: 8px; display: block; }
+        #status-text { font-weight: 700; font-size: 1.2rem; display: block; margin-bottom: 4px; }
+        #url-text { 
+            font-size: 0.75rem; 
+            color: #94a3b8; 
+            word-break: break-all; 
+            font-family: monospace; 
+            margin-bottom: 12px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background: #38bdf8;
+            color: #0f172a;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .btn:hover { opacity: 0.9; }
+        .btn:disabled { background: #475569; cursor: not-allowed; }
+
+        /* Dynamic Styles */
+        .safe { color: #10b981; }
+        .danger { color: #f43f5e; }
+        .loading { color: #fb923c; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-text">Phish<span style="color:#38bdf8">Net</span></div>
+    </div>
+
+    <div class="status-card">
+        <div id="url-text">Initializing...</div>
+        <span id="status-icon">🛡️</span>
+        <span id="status-text">Ready to Scan</span>
+    </div>
+
+    <button id="scan-btn" class="btn">Scan Current Tab</button>
+
+    <script src="popup.js"></script>
+</body>
+</html>

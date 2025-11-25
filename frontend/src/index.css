@@ -1,0 +1,240 @@
+:root {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #333;
+  background-color: #f8faff;
+
+  /* Color Palette */
+  --color-light-blue: #D4EBF8;
+  --color-medium-blue: #1F509A;
+  --color-dark-blue: #0A3981;
+  --color-orange-accent: #E38E49;
+
+  /* Semantic Colors */
+  --primary-color: var(--color-medium-blue);
+  --primary-gradient: linear-gradient(135deg, var(--color-medium-blue) 0%, var(--color-dark-blue) 100%);
+  --accent-color: var(--color-orange-accent);
+  
+  --safe-bg: #e6f7ed;
+  --safe-border: #5cb85c;
+  --safe-text: #2c772c;
+
+  --danger-bg: #ffebeb;
+  --danger-border: #e60000;
+  --danger-text: #990000;
+
+  --card-bg: white;
+  --border-color: #e0e6ed;
+  --text-muted: #6a7486;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--background-color);
+  font-size: 16px;
+  
+  /* NEW: Scattered Security Icons (Shields, Locks, Signals) */
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%231F509A' fill-opacity='0.04'%3E%3Cpath d='M15 15h10v10H15zM65 65h10v10H65z'/%3E%3Cpath d='M85 15a5 5 0 0 1 5 5v5h-10v-5a5 5 0 0 1 5-5zM35 85l5-5 5 5-5 5z'/%3E%3Ccircle cx='45' cy='45' r='3'/%3E%3Cpath d='M15 75h10v2H15zM75 25h2v10h-2z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+}
+
+.main-header {
+  font-size: 3.2rem;
+  font-weight: 700;
+  text-align: center;
+  background: var(--primary-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: var(--spacing-xs);
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Card Components */
+.card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: var(--spacing-md);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: var(--spacing-md);
+  border: 1px solid var(--border-color);
+}
+
+/* Custom Buttons */
+.btn {
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+}
+
+.btn-primary {
+  background: var(--accent-color);
+  color: white;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(110%);
+}
+
+.btn-secondary {
+  background: #f0f4f8;
+  color: var(--primary-color);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background: #e0e6ed;
+  transform: translateY(-1px);
+}
+
+/* Navigation */
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  background: var(--card-bg);
+  padding: var(--spacing-xs);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  border: 1px solid var(--border-color);
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+  font-size: 0.95rem;
+}
+
+.nav-link:hover {
+  background: #f0f4f8;
+  color: var(--primary-color);
+}
+
+.nav-link.active {
+  background: var(--primary-gradient);
+  color: white;
+  box-shadow: 0 2px 8px rgba(var(--color-medium-blue), 0.3);
+}
+
+/* Result Boxes */
+.safe-box {
+  background: var(--safe-bg);
+  border-left: 6px solid var(--safe-border);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  margin: var(--spacing-md) 0;
+  color: var(--safe-text);
+}
+
+.danger-box {
+  background: var(--danger-bg);
+  border-left: 6px solid var(--danger-border);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  margin: var(--spacing-md) 0;
+  color: var(--danger-text);
+}
+
+/* Inputs */
+input[type="text"] {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 0;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(var(--primary-color), 0.1);
+}
+
+.status-tag {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  display: inline-block;
+}
+.status-tag.safe {
+  background-color: var(--safe-bg);
+  color: var(--safe-text);
+}
+.status-tag.malicious {
+  background-color: var(--danger-bg);
+  color: var(--danger-text);
+}
+
+/* =========================================
+   Slick Scrollbars
+   ========================================= */
+
+/* For Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 6px;  /* Very thin and sleek */
+  height: 6px; /* For horizontal scrolling */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Invisible track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1; /* Light subtle grey-blue */
+  border-radius: 10px; /* Perfectly round pill shape */
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-medium-blue); /* Pop with primary color on hover */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
